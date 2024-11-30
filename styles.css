@@ -1,0 +1,115 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e2d8f3; /* Light pastel purple */
+    color: #b15482;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.container {
+    padding: 50px;
+    position: relative;
+    z-index: 2;
+}
+
+h1 {
+    font-size: 3em;
+    color: #8666b1; /* Darker purple */
+    animation: fadeIn 1s, bounce 1s infinite alternate;
+}
+
+p {
+    font-size: 1.2em;
+    margin: 20px 0;
+    animation: fadeIn 1.5s;
+}
+
+.heart-button {
+    background-color: #9b59b6; /* Medium purple */
+    color: white;
+    border: none;
+    border-radius: 25px; /* Rounded corners */
+    padding: 15px 30px;
+    font-size: 1.5em; /* Larger text */
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: fadeIn 2s;
+    margin: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow effect */
+}
+
+.heart-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+#confetti {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+#couplePicture {
+    width: 300px; /* Adjust size as needed */
+    margin-top: 20px;
+    border-radius: 15px;
+    animation: fadeIn 1s;
+}
+
+/* Heart background */
+.heart-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle, rgb(255, 105, 180) 20%, transparent 21%),
+        radial-gradient(circle, rgba(255, 105, 180, 0.5) 20%, transparent 21%);
+    background-size: 50px 50px; /* Size of heart pattern */
+    z-index: 0;
+    opacity: 0.1; /* Adjust opacity for subtlety */
+}
+
+.heart-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle, rgba(255, 105, 180, 0.5) 20%, transparent 21%),
+        radial-gradient(circle, rgba(255, 105, 180, 0.5) 20%, transparent 21%);
+    background-size: 50px 50px; /* Size of heart pattern */
+    opacity: 0.1; /* Adjust opacity for subtlety */
+}
